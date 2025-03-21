@@ -1,138 +1,96 @@
-// Функция за показване на началната секция и скриване на формата
-
-// Валидация на формата
-document.getElementById("login-form").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const email = document.getElementById("email").value;
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    const mobile = document.getElementById("mobile").value;
-    const captcha = document.getElementById("captcha").checked;
-
-    // Валидация на паролата
-    const passwordError = validatePassword(password);
-    if (passwordError) {
-        alert(passwordError);
-        return;
-    }
-
-    // Валидация на телефонния номер
-    if (!validateMobile(mobile)) {
-        alert("Моля, въведете валиден български телефонен номер!");
-        return;
-    }
-
-    // Проверка за капча
-    if (!captcha) {
-        alert("Моля, потвърдете, че не сте робот!");
-        return;
-    }
-
-    // Успешно изпращане
-    alert("Успешно влизане! Сега можете да навигирате из сайта.");
-    hideForm();
-    activateLinks();
-});
-
-function showHome() {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("home").style.display = "block";
+function showLoginForm() {
+    document.getElementById("loginForm").style.display = "block";
+    document.getElementById("registerForm").style.display = "none";
+    document.getElementById("forgotPasswordForm").style.display = "none";
+    document.getElementById("loginToggle").classList.add("active");
+    document.getElementById("registerToggle").classList.remove("active");
 }
 
-// Функция за блокиране на навигационните връзки
-function blockLinks() {
-    const links = document.querySelectorAll(".nav-links a");
-    links.forEach(link => {
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
-            alert("Моля, попълнете формата за вход/регистрация първо!");
-        });
+function showRegisterForm() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("registerForm").style.display = "block";
+    document.getElementById("forgotPasswordForm").style.display = "none";
+    document.getElementById("loginToggle").classList.remove("active");
+    document.getElementById("registerToggle").classList.add("active");
+}
+
+function showForgotPassword() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("registerForm").style.display = "none";
+    document.getElementById("forgotPasswordForm").style.display = "block";
+}
+
+function toggleMenu() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('active');
+}
+
+document.addEventListener('click', (event) => {
+    const navLinks = document.getElementById('nav-links');
+    const hamburger = document.querySelector('.hamburger');
+    const isClickInside = navLinks.contains(event.target) || hamburger.contains(event.target);
+
+    if (!isClickInside && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+    }
+});
+
+showLoginForm();
+function register() {
+    let username = document.getElementById("register-username").value;
+    let email = document.getElementById("register-email").value;
+    let password = document.getElementById("register-password").value;
+    let errorMessages = [];
+    
+    if (password.length < 6) {
+        errorMessages.push("Паролата трябва да е поне 6 символа!");
+    }
+    
+    if (!/[A-Z]/.test(password)) {
+        errorMessages.push("Паролата трябва да съдържа поне една главна буква!");
+    }
+
+    if (!/\d/.test(password)) {
+        errorMessages.push("Паролата трябва да съдържа поне една цифра!");
+    }
+
+    if (!username || !email || !password) {
+        errorMessages.push("Попълни всички полета!");
+    }
+    
+    if (errorMessages.length > 0) {
+        alert(errorMessages.join("\n"));
+        return;
+    }
+    
+    let users = JSON.parse(localStorage.getItem("ttw_users")) || [];
+    if (users.some(user => user.email === email)) {
+        alert("Имейлът вече е регистриран!");
+        return;
+    }
+    
+    users.push({ username, email, password });
+    localStorage.setItem("ttw_users", JSON.stringify(users));
+    alert("Успешна регистрация! Влез в акаунта си.");
+    showLogin();
+}
+function loadKlasacia() {
+    let users = JSON.parse(localStorage.getItem("ttw_users")) || [];
+    let tbody = document.getElementById("klasacia-body");
+
+    tbody.innerHTML = "";
+
+    users.sort((a, b) => (b.points || 0) - (a.points || 0));
+
+    users.forEach((user, index) => {
+        let row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${user.username}</td>
+            <td>${user.points || 0}</td>
+        `;
+        tbody.appendChild(row);
     });
 }
 
-// Функция за активиране на навигационните връзки
-function activateLinks() {
-    const links = document.querySelectorAll(".nav-links a");
-    links.forEach(link => {
-        link.replaceWith(link.cloneNode(true));
-    });
-}
-
-// Фалшива база данни за потребители
-let users = {};
-
-// Функция за регистрация на нов потребител
-document.getElementById("register-btn").addEventListener("click", function () {
-    const email = document.getElementById("email").value;
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    const mobile = document.getElementById("mobile").value;
-    const captcha = document.getElementById("captcha").checked;
-
-    if (!email || !username || !password || !mobile || !captcha) {
-        alert("Моля, попълнете всички полета и потвърдете, че не сте робот!");
-        return;
-    }
-
-    if (users[email]) {
-        alert("Този имейл вече е регистриран. Моля, използвайте друг имейл.");
-        return;
-    }
-
-    users[email] = { username, password, mobile };
-    alert("Регистрацията е успешна! Моля, влезте в системата.");
-});
-
-// Функция за забравена парола
-document.getElementById("forgot-password-btn").addEventListener("click", function () {
-    const email = prompt("Моля, въведете вашия имейл за нулиране на паролата:");
-    if (email && users[email]) {
-        alert("Изпратен е имейл с инструкции за нулиране на паролата на " + email);
-    } else {
-        alert("Имейлът не е намерен в нашата база данни.");
-    }
-});
-
-// Валидация на формата и показване на началната секция
-document.getElementById("login-form").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    if (!users[email] || users[email].password !== password) {
-        alert("Невалиден имейл или парола!");
-        return;
-    }
-
-    alert("Успешно влизане! Сега можете да навигирате из сайта.");
-    showHome();
-    activateLinks();
-});
-
-// Скриване на началната секция и блокиране на навигацията при зареждане на страницата
-window.onload = function () {
-    document.getElementById("home").style.display = "none";
-    blockLinks();
-};
-
-
-// Валидация на паролата
-function validatePassword(password) {
-    const minLength = 6;
-    const hasUppercase = /[A-Z]/.test(password); // Поне една главна буква
-    const hasSpecialChar = /[!@#$%^&*]/.test(password); // Поне един специален символ
-
-    if (password.length < minLength) {
-        return "Паролата трябва да съдържа минимум 6 символа!";
-    }
-    if (!hasUppercase) {
-        return "Паролата трябва да съдържа поне една главна буква!";
-    }
-    if (!hasSpecialChar) {
-        return "Паролата трябва да съдържа поне един специален символ!";
-    }
-    return null; // Ако паролата е валидна
-}
-
+window.onload = loadKlasacia;

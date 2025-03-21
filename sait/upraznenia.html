@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Plans</title>
+    <title>Упражнения</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/unnamed.png">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo"><a href="index.html" style="color: white; text-decoration: none;">FitnessPlans</a></div>
+        <div class="logo"><a href="index.html" style="color: white; text-decoration: none;">Train To Win</a></div>
         <ul class="nav-links">
             <li><a href="upraznenia.html">Упражнения</a></li>
-            <li><a href="#plans">Класация</a></li>
-            <li><a href="#about">Награди</a></li>
+            <li><a href="eko_nagradi.html">Еко Награди</a></li>
+            <li><a href="nagradi.html">Награди</a></li>
         </ul>
     </nav>
     <div class="container">
-        <h1>Choose Your Fitness Plan</h1>
+        <h1>Изберете вашият фитнес план:</h1>
         <div class="plans">
             <div class="plan" onclick="selectPlan('basic')">
                 <h2>Basic Exercise</h2>
-                <p>With or without basic equipment (dumbbells, resistance bands, yoga mat)</p>
+                <b><p>Със или без (дъмбели, ластици, постелки)</p></b>
                 <div class="icon">💪</div>
             </div>
             <div class="plan" onclick="selectPlan('weekly')">
                 <h2>Weekly Program</h2>
-                <p>Exercise for every day of the week</p>
+                <b><p>Упражнения за всеки ден от седмицата</p></b>
                 <div class="icon">📅</div>
             </div>
         </div>

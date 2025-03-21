@@ -15,7 +15,7 @@ body {
 
 }
 .navbar {
-    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Градиентен фон */
+    background: linear-gradient(135deg, #1e3c72, #2a5298); 
     color: white;
     position: fixed;
     top: 0;
@@ -27,14 +27,14 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Разпределя пространството между логото и връзките */
+    justify-content: space-between; 
 }
 
 .navbar .logo {
     color: #fff;
     font-size: 1.5rem;
     font-weight: 600;
-    margin-right: auto; /* Избутва логото наляво */
+    margin-right: auto; 
 }
 
 .navbar .nav-links {
@@ -42,13 +42,13 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
-    position: absolute; /* Позициониране абсолютно за центриране */
-    left: 47%; /* Центриране по хоризонтала */
-    transform: translateX(-50%); /* Преместване на половината от собствената ширина */
+    position: absolute; 
+    left: 47%; 
+    transform: translateX(-50%);
 }
 
 .navbar .nav-links li {
-    margin: 0 1rem; /* Разстояние между връзките */
+    margin: 0 1rem;
 }
 
 .navbar .nav-links a {
@@ -67,9 +67,9 @@ body {
     color: white;
 }
 
-/* Основно съдържание */
+
 .section {
-    padding: 50px 2rem 2rem; /* Отстъп отгоре за навигационната лента */
+    padding: 50px 2rem 2rem;
     text-align: center;
     margin-top: 40px;
 }
@@ -103,9 +103,8 @@ body {
     transform: translateY(-3px);
 }
 
-/* Основно съдържание */
 .section {
-    padding: 100px 2rem 2rem; /* Отстъп отгоре за навигационната лента */
+    padding: 100px 2rem 2rem; 
     text-align: center;
 }
 
@@ -139,14 +138,12 @@ body {
     margin: 0 auto;
 }
 
-
 .offers-flex {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
-
 
 .offer-card {
     background: #fff;
@@ -178,13 +175,13 @@ body {
 
 .offer-card .points {
     font-size: 1.2rem;
-    color: #ff6b6b; 
+    color: #ff6b6b;
     font-weight: bold;
     margin-bottom: 15px;
 }
 
 .offer-card button {
-    background: #ff6b6b;
+    background: #ff6b6b; 
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -214,6 +211,6 @@ body {
 
 @media (max-width: 480px) {
     .offer-card {
-        width: 100%;
+        width: 100%; 
     }
 }
