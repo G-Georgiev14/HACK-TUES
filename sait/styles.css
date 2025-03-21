@@ -1,0 +1,172 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    padding-top: 80px; /* Добавяме отстъп отгоре за навигационния бар */
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.plans {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.plan {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+    text-align: center;
+}
+
+.plan:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.plan h2 {
+    font-size: 1.8rem;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.plan p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #3498db;
+}
+
+/* Exercise Page Styles */
+.exercise {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.exercise-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px;
+    text-align: center;
+}
+
+.exercise-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.exercise-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.exercise-card h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .plans {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .exercise-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+/* Navbar Styles */
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #333;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Разпределя пространството между логото и връзките */
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-right: auto; /* Избутва логото наляво */
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: absolute; /* Позициониране абсолютно за центриране */
+    left: 47%; /* Центриране по хоризонтала */
+    transform: translateX(-50%); /* Преместване на половината от собствената ширина */
+}
+
+.navbar .nav-links li {
+    margin: 0 1rem; /* Разстояние между връзките */
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #ff6b6b;
+    transform: translateY(-3px);
+}
+
+.logo{
+    color: white;
+}

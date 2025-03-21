@@ -1,0 +1,216 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.homepage{
+    color: white;
+
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #333;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Разпределя пространството между логото и връзките */
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-right: auto; /* Избутва логото наляво */
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: absolute; /* Позициониране абсолютно за центриране */
+    left: 47%; /* Центриране по хоризонтала */
+    transform: translateX(-50%); /* Преместване на половината от собствената ширина */
+}
+
+.navbar .nav-links li {
+    margin: 0 1rem; /* Разстояние между връзките */
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #ff6b6b;
+    transform: translateY(-3px);
+}
+
+.logo{
+    color: white;
+}
+
+/* Основно съдържание */
+.section {
+    padding: 100px 2rem 2rem; /* Отстъп отгоре за навигационната лента */
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff4c4c;
+}
+
+/* Стилове за формата */
+/* Подобрени стилове за формата */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #343a40;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+}
+
+.form-group label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #495057;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #ff6b6b;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+}
+
+.form-group input:hover {
+    border-color: #ff6b6b;
+}
+
+/* Стилове за малките текстове под полетата */
+.form-group small {
+    display: block;
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+}
+
+/* Стилове за капча */
+.captcha {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.captcha input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.captcha label {
+    font-size: 1rem;
+    color: #495057;
+    cursor: pointer;
+}
+
+/* Стилове за бутоните */
+.cta-button {
+    width: 100%;
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff4c4c;
+    transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+    background-color: #6c757d;
+    margin-top: 0.5rem;
+}
+
+.cta-button.secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}

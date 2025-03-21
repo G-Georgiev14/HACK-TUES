@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Plans</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html" style="color: white; text-decoration: none;">FitnessPlans</a></div>
+        <ul class="nav-links">
+            <li><a href="upraznenia.html">Упражнения</a></li>
+            <li><a href="#plans">Класация</a></li>
+            <li><a href="#about">Награди</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Choose Your Fitness Plan</h1>
+        <div class="plans">
+            <div class="plan" onclick="selectPlan('basic')">
+                <h2>Basic Exercise</h2>
+                <p>With or without basic equipment (dumbbells, resistance bands, yoga mat)</p>
+                <div class="icon">💪</div>
+            </div>
+            <div class="plan" onclick="selectPlan('weekly')">
+                <h2>Weekly Program</h2>
+                <p>Exercise for every day of the week</p>
+                <div class="icon">📅</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="plans.js"></script>
+</body>
+</html>

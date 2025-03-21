@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit - Оферти с точки</title>
+    <link rel="stylesheet" href="nagradi.css">
+</head>
+<body>
+    <!-- Навигационна лента -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" class="homepage">Начало</a>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="upraznenia.html">Упражнения</a></li>
+            <li><a href="klasacia.html">Класация</a></li>
+            <li><a href="nagradi.html">Награди</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <!-- Секция с точки и оферти -->
+    <div class="points-container">
+        <span class="points-label">Вашите точки:</span>
+        <span class="points-value" id="pointsDisplay">0</span>
+    </div>
+
+    <div class="offers">
+        <div class="offer">
+            <img src="https://contents.mediadecathlon.com/p2096127/k$a6582e4b2c76e82b4711049d51e43295/lastik-training-45-kg.jpg?format=auto&quality=40&f=800x800" alt="ластик">
+            <p>Оферта 4 точки</p>
+            <button onclick="buyOffer(4)">Купи</button>
+        </div>
+        <div class="offer">
+            <img src="https://jkfitness.bg/image/cache/catalog/Trendy/Gira-metal-s-vinilovo-pokritie-5kg-jkfitness.bg-900x900.png" alt="гири">
+            <p>Оферта 5 точки</p>
+            <button onclick="buyOffer(5)">Купи</button>
+        </div>
+        <div class="offer">
+            <img src="https://i1.t4s.cz/products/nlgd5055sl/nike-men-s-elemental-fitness-gloves-482079-nlgd5055sl.jpg" alt="Ръкавици">
+            <p>Оферта 25 точки</p>
+            <button onclick="buyOffer(25)">Купи</button>
+        </div>
+        <div class="offer">
+            <img src="https://s13emagst.akamaized.net/products/32447/32446655/images/res_d21aa73d999cb0fccbc7c7ae03547ac3.jpg" alt="бягаща пътека">
+            <p>Оферта 100 точки</p>
+            <button onclick="buyOffer(100)">Купи</button>
+        </div>
+        <div class="offer">
+            <img src="https://jkfitness.bg/image/cache/catalog/JK%20Fitness/Prav-lost-olimpijski-183sm-Ø50-s-lageri-JK-Fitness-jkfitness.bg-900x900.jpg" alt="олимпийски лост">
+            <p>Оферта 300 точки</p>
+            <button onclick="buyOffer(300)">Купи</button>
+        </div>
+        <div class="offer">
+            <img src="https://sportaspect.com/5598-large_default/tezhesti-2br-kh-10-kg-gumirani.jpg" alt="тежести">
+            <p>Оферта 400 точки</p>
+            <button onclick="buyOffer(400)">Купи</button>
+        </div>
+    </div>
+
+    <div id="message"></div>
+
+    <script src="nagradi.js"></script>
+</body>
+</html>
