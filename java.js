@@ -1,7 +1,7 @@
 
 function loadPoints() {
     const savedPoints = localStorage.getItem('userPoints');
-    return savedPoints ? parseInt(savedPoints) : 50; // Ако няма запазени точки, връща 50 като начална стойност
+    return savedPoints ? parseInt(savedPoints) : 50;
 }
 
 
