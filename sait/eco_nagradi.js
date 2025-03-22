@@ -1,4 +1,3 @@
-
 function loadPoints() {
     const savedPoints = localStorage.getItem('userPoints');
     return savedPoints ? parseInt(savedPoints) : 50;
@@ -21,7 +20,7 @@ function buyOffer(requiredPoints) {
         points -= requiredPoints; 
         savePoints(points); 
         updatePointsDisplay();
-        window.location.href="QR.html"
+        window.location.href="QR2.html"
     } else {
         window.location.href="upraznenia.html"
     }
